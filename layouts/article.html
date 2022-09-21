@@ -1,0 +1,15 @@
+<article>
+  <header>
+    <<%= header_element%>><%= article[:title] %></<%= header_element%>>
+    <h4><%= link_to reported_time(article), article.path %></h4>
+  </header>
+  <% if (article[:thumbnail].nil?) %>
+  <% elsif (article[:thumbnail_url].nil?) %>
+    <img src="/thumbnails/<%= article[:thumbnail]%>" alt="<%= html_escape(article[:thumbnail_title])%>" title="<%= html_escape(article[:thumbnail_title])%>" class="article_picture">
+  <% else %>
+    <a href="<%=article[:thumbnail_url]%>">
+      <img src="/thumbnails/<%= article[:thumbnail]%>" alt="<%= html_escape(article[:thumbnail_title])%>" title="<%= html_escape(article[:thumbnail_title])%>" class="article_picture">
+    </a>
+  <% end %>
+  <%= article.compiled_content %>
+</article>

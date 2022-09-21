@@ -1,0 +1,29 @@
+---
+title: News articles
+---
+
+<% current_year = nil %>
+
+<% content_for :sidebar do %>
+  <h2>By Year</h2>
+  <ol>
+    <% sorted_articles.each do |article| %>
+      <% if current_year != get_year(article) %>
+        <% current_year = get_year(article) %>
+        <li><a href="<%= '#' + current_year %>"><%= current_year %></a></li>
+      <% end %>
+    <% end %>
+  </ol>
+<% end %>
+
+<% current_year = nil %>
+
+<h1>News articles</h1>
+
+<% sorted_articles.each do |article| %>
+  <% if current_year != get_year(article) %>
+    <% current_year = get_year(article) %>
+    <h2><a id="<%= current_year %>"><%= current_year %> articles</a></h2>
+  <% end %>
+  <%= render '/article.*', article: article, header_element: 'h3' %>
+<% end %>

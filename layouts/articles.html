@@ -1,0 +1,7 @@
+<% content_for :title do %>
+  <%= item[:title] %>
+<% end %>
+
+<% render '/default.*' do %>
+  <%= render '/article.*', article: item, header_element: 'h2' %>
+<% end %>

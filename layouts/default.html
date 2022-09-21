@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Postmoderncore - <%= content_for(@item, :title) || @item[:title] %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+    <meta name="generator" content="nanoc <%= Nanoc::VERSION %>">     
+    <link rel="icon" type="image/png" href="/favicon.png" />  
+  </head>
+  <body>
+    <div id="sidebar">
+      <h1><a href="/">Postmoderncore</a></h1>
+      <p>
+        <a href="https://archive.org/details/postmoderncore?sort=-date">All our music is hosted at archive.org</a>. Follow the link to listen, or read our news
+        articles on this website.
+      </p>
+      <p>
+        Postmoderncore is a New Zealand based netlabel with music of many genres.
+        All music is for free download under <a href="https://creativecommons.org/">Creative Commons</a> licenses.
+        Visit us on <a href="https://www.facebook.com/postmoderncore/">Facebook</a> and <a href="https://www.twitter.com/postmoderncore/">Twitter</a>.
+      </p>
+      <%= content_for(@item, :sidebar) %>
+    </div>
+    <div id="main">
+      <%= yield %>
+    </div>
+  </body>
+</html>
