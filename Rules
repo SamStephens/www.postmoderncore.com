@@ -26,6 +26,14 @@ compile '/articles/**/*.html' do
   layout '/articles.*'
 end
 
+compile '/artists.*' do
+  layout '/redirect.*'
+end
+
+compile '/redirect/**/*.html' do
+  layout '/redirect.*'
+end
+
 route '/stylesheet.*' do
   '/style.css'
 end
@@ -45,6 +53,13 @@ end
 route '/articles/**/*' do
   "#{item.identifier.without_ext}/index.html"
 end
+
+route '/redirect/**/*' do
+  identifier = item.identifier.without_ext
+  identifier = identifier.sub('redirect/', '')
+  "#{identifier}/index.html"
+end
+
 
 route '/static/**/*' do
   # /static/foo.html → /foo.html
