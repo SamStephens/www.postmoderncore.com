@@ -8,3 +8,7 @@ group :development do
   gem 'adsf'
   gem 'webrick'
 end
+
+group :nanoc do
+  gem 'nanoc-live'
+end
