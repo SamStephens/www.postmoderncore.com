@@ -3,7 +3,7 @@ GEM
   specs:
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
-    adsf (1.4.8)
+    adsf (1.5.0)
       rack (>= 1.0.0, < 4.0.0)
       rackup (~> 2.1)
     adsf-live (1.4.8)
@@ -78,7 +78,7 @@ GEM
     psych (4.0.6)
       stringio
     public_suffix (5.0.4)
-    rack (3.0.8)
+    rack (3.0.9)
     rack-livereload (0.5.1)
       rack
     rackup (2.1.0)
