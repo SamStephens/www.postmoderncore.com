@@ -102,3 +102,11 @@ li { list-style: circle; }
   margin: 20px 0;
   line-height: 20px;
 }
+
+blockquote {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  padding-left: 15px;
+  border-left: 3px solid #ccc;
+} 
